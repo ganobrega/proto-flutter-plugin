@@ -1,17 +1,33 @@
 name = "flutter"
 type = "cli"
 
-[resolve]
-git-url = "https://github.com/flutter/flutter"
-
 [platform.linux]
-download-file = "{version}.tar.gz"
+archive-prefix = "flutter"
+download-file = "flutter_linux_{arch}{version}-stable.tar.xz"
 
 [platform.macos]
-download-file = "{version}.tar.gz"
+archive-prefix = "flutter"
+download-file = "flutter_macos_{arch}{version}-stable.zip"
 
 [platform.windows]
-download-file = "{version}.zip"
+archive-prefix = "flutter"
+download-file = "flutter_windows_{arch}{version}-stable.exe"
 
 [install]
-download-url = "https://github.com/flutter/flutter/archive/refs/tags/{download_file}"
+download-url = "https://storage.googleapis.com/flutter_infra_release/releases/stable/{os}/{download_file}"
+
+[install.primary]
+exe-path = "bin/flutter"
+
+[install.secondary.dart]
+exe-path = "bin/dart"
+
+[install.secondary.flutter-dev]
+exe-path = "bin/flutter-dev"
+
+[install.arch]
+aarch64 = "_arm64_"
+x86_64 = ""
+
+[resolve]
+git-url = "https://github.com/flutter/flutter"
