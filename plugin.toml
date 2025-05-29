@@ -15,4 +15,3 @@ download-file = "{version}.zip"
 
 [install]
 download-url = "https://github.com/flutter/flutter/archive/refs/tags/{download_file}"
-https://github.com/flutter/flutter/archive/refs/tags/3.19.0-0.1.pre.zip
